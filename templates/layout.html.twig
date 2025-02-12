@@ -2,13 +2,20 @@
 
 {% block brand %}
     <a class="navbar-brand" href="{{ path('leasing_new') }}" title="Accueil">
-        <i class="fas fa-home"></i> Leasing vélo</a>
+        <i class="ti ti-bike" style="font-size: 40px;"></i> Leasing vélo</a>
 {% endblock %}
 
 {% block menu_top %}
-    <li class="nav-item">
-        <a href="{{ path('leasing_info') }}" class="nav-link">
-            <i class="ti ti-info-circle"></i> Informations
+    <li>
+        <a href="{{ path('leasing_new') }}" class="nav-link px-2">
+            <i class="ti ti-calculator"> </i>
+            Simulateur
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('leasing_info') }}" class="nav-link px-2">
+            <i class="ti ti-info-circle"> </i>
+            Informations
         </a>
     </li>
 {% endblock %}
