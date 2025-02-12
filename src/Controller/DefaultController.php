@@ -89,6 +89,11 @@ class DefaultController extends AbstractController
         Request $request,
     ): Response {
         $form = $this->createForm(LeasingSendType::class);
+        if (!$this->leasingFactory->checkHtmlExist($request)) {
+            $this->addFlash('danger', 'Veuillez remplir l\'étape une.');
+
+            return $this->redirectToRoute('leasing_new');
+        }
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

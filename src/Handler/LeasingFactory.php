@@ -87,6 +87,16 @@ class LeasingFactory
         return $fileNamePdf;
     }
 
+    public function checkHtmlExist(Request $request): bool
+    {
+        $uuid = self::getUuid($request);
+
+        $fileNameHtml = $this->getFileName($uuid, 'html');
+        $filePathHtml = $this->getTmpDir().$fileNameHtml;
+
+        return is_readable($filePathHtml);
+    }
+
     /**
      * @param Request $request
      * @return void
