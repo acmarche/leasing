@@ -7,6 +7,11 @@
 
         <div class="card-body">
 
+            <div class="alert alert-info my-3">
+                La simulation est anonyme. Aucune données n'est enregistrées.<br/>
+                Vous pouvez confirmer votre demande après le calcul du leasing.
+            </div>
+
             {% include '@AcMarcheLeasing/leasing/_form.html.twig' %}
 
             {% if leasingData.calculated %}
@@ -39,5 +44,6 @@
             {% endif %}
         </div>
         {% include '@AcMarcheLeasing/leasing/_fiche_paie.html.twig' %}
+        {% include '@AcMarcheLeasing/leasing/_fiche_afa.html.twig' %}
     </div>
 {% endblock %}
