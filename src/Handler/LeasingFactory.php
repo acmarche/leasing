@@ -19,13 +19,13 @@ class LeasingFactory
 
     public function sampleData(string $uuid): LeasingData
     {
-        $leasingData = new LeasingData(2900, 200);
+        $leasingData = new LeasingData(0, 0);
         $leasingData->statut = 'contractuel';
-        $leasingData->grossAnnualFull = 13169.59;
-        $leasingData->monthlyHouseholdResidency = 62.41;
-        $leasingData->indexValue = 208.07;
-        $leasingData->workRegime = 38;
-        $leasingData->taxableAnnualAFA = 39053.93;
+        $leasingData->grossAnnualFull = 0;
+        $leasingData->monthlyHouseholdResidency = 0;
+        $leasingData->indexValue = 0;
+        $leasingData->workRegime = 0;
+        $leasingData->taxableAnnualAFA = 0;
         $leasingData->uuid = $uuid;
 
         return $leasingData;

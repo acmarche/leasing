@@ -12,11 +12,16 @@ trait CalculatorCommonTrait {
 
     public LeasingData $leasingData;
 
+    /**
+     * @param LeasingData $data
+     * @return void
+     * @throws \Exception
+     */
     public function calculate(LeasingData $data): void
     {
         $this->leasingData = $data;
         if (!$this->canBeCalculated()) {
-            return;
+           throw new \Exception('Veuillez remplir les informations pour calculer.');
         }
         $this->leasingTotalAmount();
         $this->prepaymentPercentage();

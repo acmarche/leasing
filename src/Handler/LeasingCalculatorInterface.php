@@ -6,6 +6,11 @@ use AcMarche\Leasing\Entity\LeasingData;
 
 interface LeasingCalculatorInterface
 {
+    /**
+     * @param LeasingData $data
+     * @return void
+     * @throws \Exception
+     */
     public function calculate(LeasingData $data): void;
 
     /**
