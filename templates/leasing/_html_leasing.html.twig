@@ -1,0 +1,53 @@
+<h3 class="text-success" id="result">Vos données encodées</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Statut</th>
+        <td>{{ leasingData.statut }}</td>
+    </tr>
+    <tr>
+        <th>Valeur du leasing</th>
+        <td>{{ leasingData.leasingValue|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <th>Valeur des accessoires</th>
+        <td>{{ leasingData.accessoryValue|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <th>Brut annuel à 100%</th>
+        <td>{{ leasingData.grossAnnualFull|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <th>Foyer-Résid. mensuelle</th>
+        <td>{{ leasingData.monthlyHouseholdResidency|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <th>Index</th>
+        <td>{{ leasingData.indexValue }}</td>
+    </tr>
+    <tr>
+        <th>Régime de travail</th>
+        <td>{{ leasingData.workRegime }}</td>
+    </tr>
+    <tr>
+        <th>Imposable annuel AFA</th>
+        <td>{{ leasingData.taxableAnnualAFA|format_currency('eur') }}</td>
+    </tr>
+</table>
+{% include '@AcMarcheLeasing/leasing/_resultat.html.twig' %}
+
+{% include '@AcMarcheLeasing/leasing/_by_year.html.twig' %}
+
+<hr/>
+<hr/>
+<h3 class="text-success" id="result">Détails des calculs</h3>
+
+{% include '@AcMarcheLeasing/leasing/_details_calcul.html.twig' %}
+
+{% include '@AcMarcheLeasing/leasing/_indices_by_year.html.twig' %}
+
+<div class="alert alert-info mt-3">
+    Ces estimations sont faites sur base d'une Allocation de fin d'année complète <br/>
+    octroyée sur base d'un taux de présence assimilé à 100% du 1er janvier au 30 septembre de l'année de
+    référence.
+</div>

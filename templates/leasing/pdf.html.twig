@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="{{ absolute_url(asset('/css/pdf.css')) }}" rel="stylesheet">
+    <link href="{{ bootcdn }}" rel="stylesheet">
+    <title>Leasing Velo</title>
+</head>
+<body>
+<div class="container">
+
+    {% include '@AcMarcheLeasing/leasing/_coordonnees.html.twig' %}
+
+    {{ htmlLeasing|raw }}
+
+</div>
+</body>
+</html>

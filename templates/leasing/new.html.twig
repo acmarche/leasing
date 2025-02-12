@@ -1,0 +1,43 @@
+{% extends '@AcMarcheLeasing/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="card">
+        <h3 class="card-header">Simulation leasing vélo</h3>
+
+        <div class="card-body">
+
+            {% include '@AcMarcheLeasing/leasing/_form.html.twig' %}
+
+            {% if leasingData.calculated %}
+
+                {% include '@AcMarcheLeasing/leasing/_resultat.html.twig' %}
+
+                <div class="row my-3">
+                    <div class="col-md-6">
+                        <a href="{{ path('leasing_send') }}" class="btn btn-success">
+                            <i class="ti ti-send-2"></i> Envoyer la demande aux ressources humaines
+                        </a>
+                    </div>
+                </div>
+
+                {% include '@AcMarcheLeasing/leasing/_by_year.html.twig' %}
+
+                <hr/>
+                <hr/>
+                <h3 class="text-success" id="result">Détails des calculs</h3>
+
+                {% include '@AcMarcheLeasing/leasing/_details_calcul.html.twig' %}
+
+                {% include '@AcMarcheLeasing/leasing/_indices_by_year.html.twig' %}
+
+                <div class="alert alert-info mt-3">
+                    Ces estimations sont faites sur base d'une Allocation de fin d'année complète <br/>
+                    octroyée sur base d'un taux de présence assimilé à 100% du 1er janvier au 30 septembre de l'année de
+                    référence.
+                </div>
+            {% endif %}
+        </div>
+        {% include '@AcMarcheLeasing/leasing/_fiche_paie.html.twig' %}
+    </div>
+{% endblock %}

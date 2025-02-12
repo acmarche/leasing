@@ -1,0 +1,35 @@
+<h3 class="text-success">Décompte par année</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Années</th>
+        <th>Montant payé en net</th>
+        <th>Allocation restante</th>
+    </tr>
+    <tr>
+        <td>Année 1</td>
+        <td>{{ leasingData.agentNetContributionYear1|format_currency('eur') }}</td>
+        <td>{{ leasingData.estimateNetYearEndAllowanceBalanceYear1|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <td>Année 2</td>
+        <td>{{ leasingData.agentNetContributionYear2|format_currency('eur') }}</td>
+        <td>{{ leasingData.estimateNetYearEndAllowanceBalanceYear2|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <td>Année 3</td>
+        <td>{{ leasingData.agentNetContributionYear3|format_currency('eur') }}</td>
+        <td>{{ leasingData.estimateNetYearEndAllowanceBalanceYear3|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <td>Valeur d'achat résiduel en dernière année (15,01% du vélo)</td>
+        <td>+ {{ leasingData.residualPurchaseValueFinalYear|format_currency('eur') }}</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Coût total du leasing pris en charge par l'agent</td>
+        <td>
+            <strong>{{ leasingData.leasingCostCoveredByAgent|format_currency('eur') }}</strong>
+        </td>
+        <td></td>
+    </tr>
+</table>

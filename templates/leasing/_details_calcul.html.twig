@@ -1,0 +1,55 @@
+<table class="table table-bordered">
+    <tbody>
+    <tr>
+        <th>
+            Allocation annuelle de fin d'année disponible en brute
+        </th>
+        <td>
+            {{ leasingData.annualYearEndAllowanceAvailable|format_currency('eur') }}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Allocation annuelle de fin d'année disponible en net
+        </th>
+        <td>
+            {{ leasingData.estimateNetFullYearEndAllowance|format_currency('eur') }}
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Valeur d'achat du leasing (Vélo et accessoires)
+        </th>
+        <td>
+            {{ leasingData.leasingTotalAmount|format_currency('eur') }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="table">
+    <tr>
+        <th>Apport personnel nécessaire</th>
+        <td>
+            {{ leasingData.personalContribution|format_currency('eur') }}
+        </td>
+    </tr>
+    <tr>
+        <th>Disponible AFA</th>
+        <td>{{ leasingData.availableAFA|format_currency('eur') }}</td>
+    </tr>
+    <tr>
+        <th>Forfais AFA</th>
+        <td>{{ leasingData.fixedAmountAFA|format_currency('eur',{fraction_digit: 4}) }}</td>
+    </tr>
+    <tr>
+        <th>Pourcentage précompte</th>
+        <td>{{ (leasingData.prepaymentPercentage) }} %</td>
+    </tr>
+</table>
+

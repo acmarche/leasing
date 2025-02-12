@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Revue de presse{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('bundles/acmarcheleasing/favicon.ico') }}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+    {% block stylesheets %}{% endblock %}
+
+    {% block javascripts %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% endblock %}
+
+</head>
+<body class="d-flex flex-column h-100">
+{% set action = app.request.attributes.get("_route") %}
+{% include '@AcMarcheLeasing/_header.html.twig' %}
+
+<main role="main" class="container pt-3">
+
+    {% include '@AcMarcheLeasing/_flash_messages.html.twig' %}
+
+    {% block notifications %}
+
+    {% endblock %}
+
+    {% block body %}
+
+    {% endblock %}
+</main>
+
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container d-flex align-items-center justify-content-center">
+            <span class="text-muted">Ac Marche-en-Famenne</span>
+        </div>
+    </footer>
+{% endblock %}
+{% block scripts %}{% endblock %}
+</body>
+</html>
