@@ -132,4 +132,15 @@ class DefaultController extends AbstractController
             $response,
         );
     }
+
+    #[Route(path: '/info', name: 'leasing_info')]
+    public function info(): Response
+    {
+        return $this->render(
+            '@AcMarcheLeasing/leasing/info.html.twig',
+            [
+
+            ],
+        );
+    }
 }

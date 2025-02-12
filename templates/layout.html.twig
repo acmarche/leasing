@@ -1,42 +1,14 @@
-<!doctype html>
-<html lang="fr" class="h-100">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}Revue de presse{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('bundles/acmarcheleasing/favicon.ico') }}"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-    {% block stylesheets %}{% endblock %}
+{% extends 'base5.html.twig' %}
 
-    {% block javascripts %}
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
-    {% endblock %}
-
-</head>
-<body class="d-flex flex-column h-100">
-{% set action = app.request.attributes.get("_route") %}
-{% include '@AcMarcheLeasing/_header.html.twig' %}
-
-<main role="main" class="container pt-3">
-
-    {% include '@AcMarcheLeasing/_flash_messages.html.twig' %}
-
-    {% block notifications %}
-
-    {% endblock %}
-
-    {% block body %}
-
-    {% endblock %}
-</main>
-
-{% block footer %}
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container d-flex align-items-center justify-content-center">
-            <span class="text-muted">Ac Marche-en-Famenne</span>
-        </div>
-    </footer>
+{% block brand %}
+    <a class="navbar-brand" href="{{ path('leasing_new') }}" title="Accueil">
+        <i class="fas fa-home"></i> Leasing vélo</a>
 {% endblock %}
-{% block scripts %}{% endblock %}
-</body>
-</html>
+
+{% block menu_top %}
+    <li class="nav-item">
+        <a href="{{ path('leasing_info') }}" class="nav-link">
+            <i class="ti ti-info-circle"></i> Informations
+        </a>
+    </li>
+{% endblock %}
