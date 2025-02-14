@@ -33,6 +33,7 @@ class DefaultController extends AbstractController
     #[Route(path: '/', name: 'leasing_index', methods: ['GET'])]
     public function index(): Response
     {
+        return $this->redirectToRoute('leasing_new');
         $leasings = [];
 
         return $this->render(
