@@ -6,9 +6,11 @@
     🥳 🥳
 </div>
 
-<div class="alert alert-danger">
-    Vu la valeur inititiale du vélo, le montant de vos allocations ne suffisant pas<br/>
-    <strong>
-        un apport personnel d'un montant de {{ leasingData.leasingCostCoveredByAgent|format_currency('eur') }}
-    </strong> sera nécessaire
-</div>
+{% if leasingData.personalContribution > 0 %}
+    <div class="alert alert-danger">
+        Vu la valeur inititiale du vélo, le montant de vos allocations ne suffisant pas<br/>
+        <strong>
+            un apport personnel d'un montant de {{ leasingData.personalContribution|format_currency('eur') }}
+        </strong> sera nécessaire
+    </div>
+{% endif %}
