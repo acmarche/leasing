@@ -147,4 +147,15 @@ class DefaultController extends AbstractController
             ],
         );
     }
+
+    #[Route(path: '/presentation', name: 'leasing_presentation')]
+    public function presentation(): Response
+    {
+        return $this->render(
+            '@AcMarcheLeasing/leasing/presentation.html.twig',
+            [
+
+            ],
+        );
+    }
 }
