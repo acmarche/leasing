@@ -41,8 +41,8 @@ class LeasingType extends AbstractType
                 [
                     'required' => true,
                     'attr' => ['autocomplete' => 'off'],
-                    'label' => 'Accessoires et abonnements',
-                    'help' => 'Mettre ici le reste des accessoires (cadenas, casque,...) ou abonnements divers.',
+                    'label' => 'Accessoires',
+                    'help' => 'Mettre ici le reste des accessoires (cadenas, casque,...).',
                 ],
             )
             ->add(
@@ -59,7 +59,7 @@ class LeasingType extends AbstractType
                 'monthlyHouseholdResidency',
                 MoneyType::class,
                 [
-                    'label' => 'Foyer-Résidentielle. mensuelle',
+                    'label' => 'Foyer-Résidentielle mensuelle',
                     'help' => '<strong>Codes 3200 ou 3210</strong>. Si aucun de ces deux codes n\'est présent, mettre 0,00',
                     'help_html' => true,
                     'attr' => ['autocomplete' => 'off'],

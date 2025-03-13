@@ -1,7 +1,14 @@
 <h3 class="text-success" id="result">Résultats</h3>
 <div class="alert alert-success">
     🥳 🥳 Vous payez <strong>{{ leasingData.leasingCostCoveredByAgent|format_currency('eur') }}</strong>
-    pour un vélo d'une valeur de
+    pour un vélo et les accessoires, assurances, assistances et entretients d'une valeur de
     <strong>{{ leasingData.leasingTotalAmount|format_currency('eur') }}</strong>
     🥳 🥳
+</div>
+
+<div class="alert alert-danger">
+    Vu la valeur inititiale du vélo, le montant de vos allocations ne suffisant pas<br/>
+    <strong>
+        un apport personnel d'un montant de {{ leasingData.leasingCostCoveredByAgent|format_currency('eur') }}
+    </strong> sera nécessaire
 </div>
