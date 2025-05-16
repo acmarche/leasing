@@ -121,7 +121,7 @@ class DefaultController extends AbstractController
 
                 return $this->redirectToRoute('leasing_new');
             } catch (\Exception|TransportExceptionInterface $exception) {
-                $this->addFlash('danger', 'Erreur lors de l\'envoie de votre demande : '.$exception->getMessage());
+                $this->addFlash('danger', 'Erreur lors de l\'envoi de votre demande : '.$exception->getMessage());
             }
         }
 
