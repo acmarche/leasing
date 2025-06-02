@@ -1,0 +1,46 @@
+{% extends '@AcMarcheLeasing/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="card">
+        <h3 class="card-header">Simulateur de remboursement kilométrique</h3>
+
+        <div class="card-body">
+
+            {% if result|length > 0 %}
+                <div class="alert alert-success">
+                    Par mois: {{ result.monthly|format_currency('eur') }}
+                    <br/>
+                    Sur l'année: {{ result.yearly|format_currency('eur') }}
+                </div>
+            {% endif %}
+
+            <div class="alert alert-info">
+                Tarif actuel : {{ allowance|format_currency('eur') }} /km
+            </div>
+
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.number_kilometers) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.number_trips) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">{{ form_row(form.number_months) }}</div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary mr-1 my-3" type="submit">
+                        <i class="ti ti-calculator" aria-hidden="true"></i>
+                        Calculer l'indemnité
+                    </button>
+                </div>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+{% endblock %}
